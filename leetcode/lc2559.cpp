@@ -1,8 +1,3 @@
-/*
-bài này prefixsum, do mình lâu không đụng thuật toán nên làm lâu quá
-ngày mai xem solution viết lại ngắn gọn hơn
-*/
-
 class Solution {
 public:
     vector<int> vowelStrings(vector<string>& words,

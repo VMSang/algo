@@ -34,7 +34,7 @@ int main() {
         if(tmp.size() < max_freq.size()) continue;
 
         int flag = 1;
-        for(auto it = max_freq.begin(); it != end(); it++){
+        for(auto it = max_freq.begin(); it != max_freq.end(); it++){
             auto check = tmp.find(it->first);
             if(check != tmp.end()){
                 // compare freq

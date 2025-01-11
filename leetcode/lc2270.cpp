@@ -1,6 +1,3 @@
-/*
-nên nhẩm trong đầu khi nó chạy sẽ ntn thay vì "chắc là..."
-*/
 class Solution {
 public:
     int waysToSplitArray(vector<int>& nums) {
