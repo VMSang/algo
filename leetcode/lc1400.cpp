@@ -1,40 +1,28 @@
-#include <bits/stdc++.h>
-using namespace std;
+class Solution {
+public:
+    bool canConstruct(string s, int k) {
+        // base case
+        if(s.size() < k) return false;
+        if(s.size() == k) return true;
 
-int main() {
-	string s = ""annabelle"";
-	int k = 2;
+        map<char, int> frq;
+        for(char c : s){
+            frq[c]++;
+        }  
+        int cntodd = 0;
+        for(auto [x, y] : frq){
+            if(y%2 == 1) cntodd++;
+        }
 
-	unordered_set<char> se1;
-	for (char c : s) {
-		se1.insert(c);
-		if (se1.size() == 26)
-			break;
-	}
+        if(k >= cntodd) return true;
+        else return false;
+    }
+};
 
-	int ans = 0; // count number of palindrome can make
-	for (char c : se1) {
-		int i = -1, j = 0;
-		for (size_t x = 0; x < s.size(); x++) {
-			if (s[x] == c) {
-				if (i == -1) {
-					i = x;
-				}
-				j = x;
-			}
-		}
 
-		unordered_set<char> se2;
-		se2.insert(c);
-		for (int x = i + 1; x < j; x++) {
-			se2.insert(s[x]);
-		}
 
-		if (se2.size() == se1.size()) {
-			ans++;
-			if (ans >= k) cout << "co the";
-		}
-	}
-	cout << "khong the";
-	return 0;
-}
+/*
+so luong palindrome toi da = so luong ki tu trong s (duoc phep trung)
+so luong palindrome toi thieu = so luong ki tu le
+
+*/
